@@ -44,6 +44,11 @@ export function HeroSection() {
             <Button asChild size="lg" className="text-lg px-8 py-6">
               <Link href="/portfolio">Portföyü İncele</Link>
             </Button>
+            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
+              <Link href="mailto:onur@example.com?subject=Teklif%20İsteği" target="_blank" rel="noopener noreferrer">
+                Teklif İste
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
