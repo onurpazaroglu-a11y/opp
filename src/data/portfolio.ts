@@ -14,8 +14,18 @@ export interface CategoryItem {
   href: string;
 }
 
+// Interior öğelerini dinamik olarak oluşturma (1'den 20'ye kadar)
+const interiorItems: PortfolioItem[] = Array.from({ length: 20 }, (_, i) => ({
+  id: 13 + i, // ID'ler çakışmayacak şekilde ayarlandı
+  title: `İç Mekan Projesi ${i + 1}`,
+  category: "Interior",
+  imageUrl: `/interior/interior-${i + 1}.jpg`,
+  description: `Eklenen iç mekan görseli ${i + 1}.`,
+}));
+
+
 export const portfolioItems: PortfolioItem[] = [
-  // Dış Mekan Öğeleri (Exterior) - 16 adede kadar genişletildi
+  // Dış Mekan Öğeleri (Exterior) - 16 adet
   {
     id: 1,
     title: "Modern Villa Exterior 1",
@@ -129,105 +139,29 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Exterior visualization project 16.",
   },
   
-  // İç Mekan Öğeleri (Interior) - 11 adet
-  {
-    id: 13,
-    title: "Modern Mutfak Tasarımı",
-    category: "Interior",
-    imageUrl: `/interior/interior-1.jpg`,
-    description: "Minimalist çizgilerle tasarlanmış, ferah ve modern mutfak renderı.",
-  },
-  {
-    id: 14,
-    title: "Lüks Oturma Odası",
-    category: "Interior",
-    imageUrl: `/interior/interior-2.jpg`,
-    description: "Yüksek tavanlı, doğal ışık alan lüks oturma odası render çalışması.",
-  },
-  {
-    id: 15,
-    title: "Yatak Odası Konsepti",
-    category: "Interior",
-    imageUrl: `/interior/interior-3.jpg`,
-    description: "Sakin renk paleti ve ahşap detaylarla tasarlanmış yatak odası.",
-  },
-  {
-    id: 16,
-    title: "Banyo Görselleştirme",
-    category: "Interior",
-    imageUrl: `/interior/interior-4.jpg`,
-    description: "Mermer ve cam detayların hakim olduğu modern banyo tasarımı.",
-  },
-  {
-    id: 17,
-    title: "İç Mekan Projesi 5",
-    category: "Interior",
-    imageUrl: `/interior/interior-5.jpg`,
-    description: "Eklenen iç mekan görseli 5.",
-  },
-  {
-    id: 18,
-    title: "İç Mekan Projesi 6",
-    category: "Interior",
-    imageUrl: `/interior/interior-6.jpg`,
-    description: "Eklenen iç mekan görseli 6.",
-  },
-  {
-    id: 19,
-    title: "İç Mekan Projesi 7",
-    category: "Interior",
-    imageUrl: `/interior/interior-7.jpg`,
-    description: "Eklenen iç mekan görseli 7.",
-  },
-  {
-    id: 20,
-    title: "İç Mekan Projesi 8",
-    category: "Interior",
-    imageUrl: `/interior/interior-8.jpg`,
-    description: "Eklenen iç mekan görseli 8.",
-  },
-  {
-    id: 21,
-    title: "İç Mekan Projesi 9",
-    category: "Interior",
-    imageUrl: `/interior/interior-9.jpg`,
-    description: "Eklenen iç mekan görseli 9.",
-  },
-  {
-    id: 22,
-    title: "İç Mekan Projesi 10",
-    category: "Interior",
-    imageUrl: `/interior/interior-10.jpg`,
-    description: "Eklenen iç mekan görseli 10.",
-  },
-  {
-    id: 23,
-    title: "İç Mekan Projesi 11",
-    category: "Interior",
-    imageUrl: `/interior/interior-11.jpg`,
-    description: "Eklenen iç mekan görseli 11.",
-  },
+  // İç Mekan Öğeleri (Interior) - 20 adet
+  ...interiorItems,
 
   // Müşteri Portföyü Öğeleri
   {
-    id: 6,
+    id: 60, // ID çakışmasını önlemek için yüksek bir değer verildi
     title: "Luxury Apartment Project",
     category: "Client Portfolio",
     imageUrl: `/client/client-1.jpg`, // Varsayılan yerel yol
     description: "A high-end residential project completed for a major developer.",
   },
   
-  // Animasyon Öğeleri (YouTube küçük resimleri kullandığı için bu yollar değişmedi)
+  // Animasyon Öğeleri
   {
-    id: 7,
+    id: 70,
     title: "Konut Projesi - Miami",
     category: "Animation",
-    imageUrl: `https://picsum.photos/seed/7/800/600`, // YouTube küçük resmi kullanılacak, bu alan sadece fallback
+    imageUrl: `https://picsum.photos/seed/7/800/600`, 
     description: "Miami'de bir konut projesinin animasyonu.",
     videoUrl: "https://youtu.be/qPgajiupIUc",
   },
   {
-    id: 8,
+    id: 80,
     title: "Villa Projesi - Çeşme",
     category: "Animation",
     imageUrl: `https://picsum.photos/seed/8/800/600`,
@@ -235,7 +169,7 @@ export const portfolioItems: PortfolioItem[] = [
     videoUrl: "https://youtu.be/RqqQMvNl0go",
   },
   {
-    id: 9,
+    id: 90,
     title: "Konut Projesi - USA",
     category: "Animation",
     imageUrl: `https://picsum.photos/seed/9/800/600`,
@@ -243,7 +177,7 @@ export const portfolioItems: PortfolioItem[] = [
     videoUrl: "https://youtu.be/MnxQr288Ir0",
   },
   {
-    id: 10,
+    id: 100,
     title: "Konut Projesi - Kadıköy",
     category: "Animation",
     imageUrl: `https://picsum.photos/seed/10/800/600`,
@@ -251,7 +185,7 @@ export const portfolioItems: PortfolioItem[] = [
     videoUrl: "https://youtu.be/Wl924dvRCzo",
   },
   {
-    id: 11,
+    id: 110,
     title: "Kentsel Dönüşüm Projesi - Kadıköy",
     category: "Animation",
     imageUrl: `https://picsum.photos/seed/11/800/600`,
@@ -259,7 +193,7 @@ export const portfolioItems: PortfolioItem[] = [
     videoUrl: "https://youtu.be/VyLKl5ZVOSc",
   },
   {
-    id: 12,
+    id: 120,
     title: "Konut projesi - KKTC",
     category: "Animation",
     imageUrl: `https://picsum.photos/seed/12/800/600`,
