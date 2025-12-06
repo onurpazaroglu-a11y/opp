@@ -127,12 +127,11 @@ export function RequestQuoteForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Proje Tipi</FormLabel>
+              {/* FormControl'ü SelectTrigger'ın etrafından kaldırıp, Select'i sarmalıyoruz. */}
               <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Lütfen bir proje tipi seçiniz" />
-                  </SelectTrigger>
-                </FormControl>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Lütfen bir proje tipi seçiniz" />
+                </SelectTrigger>
                 <SelectContent>
                   {projectTypeOptions.map(option => (
                     <SelectItem key={option.value} value={option.value}>
