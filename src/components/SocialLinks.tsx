@@ -16,11 +16,17 @@ const socialLinks: SocialLink[] = [
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-4 mt-8">
+    <div className="flex justify-center space-x-6">
       {socialLinks.map((link) => (
-        <Button key={link.label} variant="outline" size="icon" asChild>
+        <Button 
+          key={link.label} 
+          variant="ghost" 
+          size="icon" 
+          className="h-12 w-12 text-foreground hover:text-primary transition-colors" 
+          asChild
+        >
           <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer">
-            <link.icon className="h-5 w-5" />
+            <link.icon className="h-8 w-8" />
           </Link>
         </Button>
       ))}
