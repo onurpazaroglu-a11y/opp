@@ -16,18 +16,19 @@ const socialLinks: SocialLink[] = [
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-10">
+    <div className="flex justify-center space-x-16">
       {socialLinks.map((link) => (
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Buton boyutu h-36 w-36
-          className="h-36 w-36 text-foreground hover:text-primary transition-colors p-0" 
+          // Buton boyutu h-28 w-28
+          className="h-28 w-28 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
           asChild
         >
-          <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer">
-            {/* İkon boyutları buton boyutuna eşitlendi (h-36 w-36) */}
-            <link.icon className="h-36 w-36" />
+          <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+            {/* İkon boyutları h-24 w-24 */}
+            <link.icon className="h-24 w-24 transition-colors group-hover:text-primary" />
+            {/* İkonların altına etiket eklenmedi, sadece ikonlar kullanıldı. */}
           </Link>
         </Button>
       ))}
