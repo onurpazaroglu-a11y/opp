@@ -52,7 +52,7 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
       <DialogContent 
         className={cn(
           "fixed inset-0 max-w-full max-h-full w-screen h-screen p-0 bg-black/90 border-none",
-          "flex flex-col items-center justify-center z-[9999]" // Tam ekranı kapla ve içeriği ortala
+          "flex flex-col items-center justify-center z-[9999]"
         )}
         // DialogContent'ın kapanma düğmesini gizle
         onInteractOutside={(e) => e.preventDefault()}
@@ -61,7 +61,7 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
+          className="absolute top-4 right-4 z-50 text-white hover:bg-white/20 h-10 w-10"
           onClick={onClose}
         >
           <X className="h-6 w-6" />
@@ -71,7 +71,7 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
         <Button
           variant="ghost"
           size="icon"
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 text-white hover:bg-white/20 disabled:opacity-30"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 text-white hover:bg-white/20 disabled:opacity-30 h-12 w-12"
           onClick={() => onNavigate("prev")}
           disabled={isFirst}
         >
@@ -81,7 +81,7 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
         <Button
           variant="ghost"
           size="icon"
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 text-white hover:bg-white/20 disabled:opacity-30"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 text-white hover:bg-white/20 disabled:opacity-30 h-12 w-12"
           onClick={() => onNavigate("next")}
           disabled={isLast}
         >
@@ -89,23 +89,17 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
         </Button>
 
         {/* Görsel İçeriği */}
-        {/* Görseli ortalamak için flex yapısını kullanıyoruz */}
+        {/* Görseli ortalamak ve ekranı doldurmak için flex yapısını kullanıyoruz */}
         <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-8 lg:p-12">
-          <div className="relative max-w-full max-h-full w-auto h-auto">
+          {/* Görsel kapsayıcısı: Başlık/Açıklama için altta boşluk bırakıldı */}
+          <div className="relative w-full h-full max-h-[calc(100vh-120px)] max-w-[calc(100vw-96px)]">
             <Image
               src={currentItem.imageUrl}
               alt={currentItem.title}
-              // Next/Image'ın boyutlandırmasını daha iyi kontrol etmek için fill kullanıp, 
-              // kapsayıcı div'in boyutunu sınırlayabiliriz. Ancak mevcut yapıda 'contain' ile devam edelim.
-              width={1600} 
-              height={900} 
-              style={{ 
-                objectFit: 'contain', 
-                width: 'auto', 
-                height: 'auto', 
-                maxHeight: 'calc(100vh - 120px)', // Başlık/Açıklama ve padding için biraz boşluk bırakıldı
-                maxWidth: 'calc(100vw - 120px)' 
-              }}
+              // fill kullanarak kapsayıcıyı doldurmasını sağlıyoruz
+              fill
+              // object-contain ile görselin en boy oranını koruyarak sığdırıyoruz
+              style={{ objectFit: 'contain' }} 
               className="rounded-lg shadow-2xl"
             />
           </div>
