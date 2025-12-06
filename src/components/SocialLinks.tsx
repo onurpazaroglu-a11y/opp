@@ -24,17 +24,17 @@ export function SocialLinks() {
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Buton boyutu h-20 w-20 olarak ayarlandı (daha da küçültüldü)
-          className="h-auto w-24 text-foreground hover:text-primary transition-colors p-2 flex flex-col items-center justify-center group" 
+          // Buton genişliği w-20 olarak ayarlandı
+          className="h-auto w-20 text-foreground hover:text-primary transition-colors p-2 flex flex-col items-center justify-center group" 
           asChild
         >
-          <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center space-y-2">
-            {/* next/image boyutu 64px olarak ayarlandı */}
+          <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center space-y-1">
+            {/* next/image boyutu 48px olarak ayarlandı */}
             <Image
               src={link.src}
               alt={link.label}
-              width={64} 
-              height={64}
+              width={48} 
+              height={48}
               className="transition-opacity duration-300 group-hover:opacity-80"
             />
             {/* Buton ismi eklendi */}
