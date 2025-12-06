@@ -9,10 +9,6 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/vi/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-      },
     ],
   },
   webpack: (config) => {

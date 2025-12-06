@@ -20,14 +20,14 @@ export const portfolioItems: PortfolioItem[] = [
     id: 1,
     title: "Modern Villa Exterior",
     category: "Exterior",
-    imageUrl: `https://picsum.photos/seed/1/800/600`,
+    imageUrl: `/exterior/exterior-1.jpg`, // Varsayılan yerel yol
     description: "A sleek, minimalist villa design rendered under bright daylight.",
   },
   {
     id: 4,
     title: "Forest Cabin Render",
     category: "Exterior",
-    imageUrl: `https://picsum.photos/seed/4/800/600`,
+    imageUrl: `/exterior/exterior-2.jpg`, // Varsayılan yerel yol
     description: "A rustic cabin nestled in a dense forest environment.",
   },
   
@@ -36,28 +36,28 @@ export const portfolioItems: PortfolioItem[] = [
     id: 13,
     title: "Modern Mutfak Tasarımı",
     category: "Interior",
-    imageUrl: `https://picsum.photos/seed/13/800/600`,
+    imageUrl: `/interior/interior-1.jpg`,
     description: "Minimalist çizgilerle tasarlanmış, ferah ve modern mutfak renderı.",
   },
   {
     id: 14,
     title: "Lüks Oturma Odası",
     category: "Interior",
-    imageUrl: `https://picsum.photos/seed/14/800/600`,
+    imageUrl: `/interior/interior-2.jpg`,
     description: "Yüksek tavanlı, doğal ışık alan lüks oturma odası render çalışması.",
   },
   {
     id: 15,
     title: "Yatak Odası Konsepti",
     category: "Interior",
-    imageUrl: `https://picsum.photos/seed/15/800/600`,
+    imageUrl: `/interior/interior-3.jpg`,
     description: "Sakin renk paleti ve ahşap detaylarla tasarlanmış yatak odası.",
   },
   {
     id: 16,
     title: "Banyo Görselleştirme",
     category: "Interior",
-    imageUrl: `https://picsum.photos/seed/16/800/600`,
+    imageUrl: `/interior/interior-4.jpg`,
     description: "Mermer ve cam detayların hakim olduğu modern banyo tasarımı.",
   },
 
@@ -66,16 +66,16 @@ export const portfolioItems: PortfolioItem[] = [
     id: 6,
     title: "Luxury Apartment Project",
     category: "Client Portfolio",
-    imageUrl: `https://picsum.photos/seed/6/800/600`,
+    imageUrl: `/client/client-1.jpg`, // Varsayılan yerel yol
     description: "A high-end residential project completed for a major developer.",
   },
   
-  // Animasyon Öğeleri
+  // Animasyon Öğeleri (YouTube küçük resimleri kullandığı için bu yollar değişmedi)
   {
     id: 7,
     title: "Konut Projesi - Miami",
     category: "Animation",
-    imageUrl: `https://picsum.photos/seed/7/800/600`,
+    imageUrl: `https://picsum.photos/seed/7/800/600`, // YouTube küçük resmi kullanılacak, bu alan sadece fallback
     description: "Miami'de bir konut projesinin animasyonu.",
     videoUrl: "https://youtu.be/qPgajiupIUc",
   },
