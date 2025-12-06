@@ -12,7 +12,7 @@ const experience = [
     icon: Briefcase,
   },
   {
-    title: "Mimari Görselleştirme ve Proje Yönetimi",
+    title: "Ürün Tasarımcısı ve İç Mimar", // Başlık güncellendi
     company: "Çeşitli Firmalar",
     duration: "2012 - Günümüz",
     description: "Projelerin başlangıcından teslimine kadar süre, gereklilikler ve opsiyonları göz önüne alarak proje takvimi hazırlama ve görselleştirme hizmeti sağlama. İstenilirse projeye bağlı imalat – üretim çizimleri hazırlama.",
