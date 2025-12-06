@@ -50,7 +50,7 @@ export default function PortfolioPage() {
       
       {/* Çözüm Ortakları Bölümü */}
       <div className="mt-20 pt-10">
-        <h2 className="text-4xl font-extrabold mb-10 text-center text-primary tracking-tight">
+        <h2 className="text-4xl font-extralight mb-10 text-center text-primary tracking-tight">
           Çözüm Ortakları
         </h2>
         <PartnerLogos />
