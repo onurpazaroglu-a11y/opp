@@ -16,17 +16,18 @@ const socialLinks: SocialLink[] = [
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-6">
+    <div className="flex justify-center space-x-10">
       {socialLinks.map((link) => (
         <Button 
           key={link.label} 
           variant="ghost" 
-          size="icon" 
-          className="h-12 w-12 text-foreground hover:text-primary transition-colors" 
+          // Boyutları yaklaşık 3 kat büyütüldü (h-12 w-12 -> h-36 w-36)
+          className="h-36 w-36 text-foreground hover:text-primary transition-colors p-0" 
           asChild
         >
           <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer">
-            <link.icon className="h-8 w-8" />
+            {/* İkon boyutları büyütüldü (h-8 w-8 -> h-24 w-24) */}
+            <link.icon className="h-24 w-24" />
           </Link>
         </Button>
       ))}
