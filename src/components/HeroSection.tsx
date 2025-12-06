@@ -29,10 +29,10 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center p-4">
-        <h1 className="text-6xl md:text-8xl font-light tracking-tighter mb-4 text-foreground">
+        <h1 className="text-6xl md:text-8xl font-extralight tracking-tighter mb-4 text-foreground">
           Onur PAZAROĞLU
         </h1>
-        <p className="text-xl md:text-2xl font-light text-muted-foreground max-w-4xl mx-auto mb-8">
+        <p className="text-xl md:text-2xl font-extralight text-muted-foreground max-w-4xl mx-auto mb-8">
           Proje ve Sunumlarınız için hızlı ve başarılı çözümler
         </p>
 
