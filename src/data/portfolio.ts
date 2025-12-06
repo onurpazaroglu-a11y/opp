@@ -14,6 +14,11 @@ export interface CategoryItem {
   href: string;
 }
 
+export interface PartnerItem {
+  name: string;
+  href: string;
+}
+
 // Interior öğelerini dinamik olarak oluşturma (1'den 20'ye kadar)
 const interiorItems: PortfolioItem[] = Array.from({ length: 20 }, (_, i) => ({
   id: 13 + i, // ID'ler çakışmayacak şekilde ayarlandı
@@ -206,7 +211,7 @@ export const clientList: string[] = [
   "Tolan Mimarlık",
   "CSIN Studio",
   "NEF",
-  "1217 Interiors", // Burası güncellendi
+  "1217 Interiors",
   "TMD Architects",
   "AKKA group",
   "Seri Yapı İnşaat",
@@ -226,4 +231,9 @@ export const clientList: string[] = [
   "Zeynep Helvacıoğlu İçmimarlık",
   "VOG Design",
   "YET Tasarım",
+];
+
+export const partnerList: PartnerItem[] = [
+  { name: "become design", href: "https://www.become.design.com" },
+  { name: "Backtobasics", href: "https://backtobasics.ist/" },
 ];
