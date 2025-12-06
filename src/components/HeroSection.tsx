@@ -42,7 +42,7 @@ export function HeroSection() {
           {/* Yeni Butonlar */}
           <div className="flex justify-center space-x-4">
             <Button asChild size="lg" className="text-lg px-8 py-6">
-              <Link href="#exterior">Portföyü İncele</Link>
+              <Link href="/portfolio">Portföyü İncele</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
               <Link href="mailto:onur@example.com">Teklif İste</Link>

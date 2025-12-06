@@ -25,7 +25,7 @@ const languages = [
 // Navigasyon öğeleri
 const navItems = [
   { name: "Biografi", href: "#biography" },
-  { name: "Portföy", href: "#exterior" },
+  { name: "Portföy", href: "/portfolio" },
   { name: "İletişim", href: "mailto:onur@example.com" },
 ];
 
