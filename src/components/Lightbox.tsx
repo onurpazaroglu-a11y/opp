@@ -1,6 +1,6 @@
 "use client";
 
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { PortfolioItem } from "@/data/portfolio";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
@@ -57,6 +57,11 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
         // DialogContent'ın kapanma düğmesini gizle
         onInteractOutside={(e) => e.preventDefault()}
       >
+        {/* Erişilebilirlik için görsel olarak gizlenmiş DialogTitle eklendi */}
+        <DialogTitle className="sr-only">
+          {currentItem.title} - Portföy Görseli
+        </DialogTitle>
+
         {/* Kapatma Düğmesi */}
         <Button
           variant="ghost"
