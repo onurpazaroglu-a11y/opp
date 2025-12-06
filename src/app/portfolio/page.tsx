@@ -5,7 +5,6 @@ import { PortfolioTabs } from "@/components/PortfolioTabs";
 import { useState, useCallback } from "react";
 import { portfolioItems, PortfolioItem } from "@/data/portfolio";
 import { Lightbox } from "@/components/Lightbox";
-import { PartnerLogos } from "@/components/PartnerLogos";
 import { Separator } from "@/components/ui/separator";
 
 // Sadece görsel olan öğeleri filtrele (Video olmayanlar)
@@ -41,13 +40,7 @@ export default function PortfolioPage() {
       {/* Portfolio Tabs (İçinde Müşteri Portföyü sekmesi de var) */}
       <PortfolioTabs onImageClick={handleOpenLightbox} />
       
-      {/* Çözüm Ortakları Bölümü */}
-      <div className="mt-20 pt-10">
-        <h2 className="text-4xl font-extralight mb-10 text-center text-primary tracking-tight">
-          Çözüm Ortakları
-        </h2>
-        <PartnerLogos />
-      </div>
+      {/* Çözüm Ortakları Bölümü buradan kaldırıldı ve PortfolioSection içine taşındı. */}
 
       <Separator className="my-12" />
       

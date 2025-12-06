@@ -1,6 +1,8 @@
 import { PortfolioCategory, PortfolioItem, portfolioItems } from "@/data/portfolio";
 import { PortfolioItemCard } from "./PortfolioItemCard";
 import { ClientLogos } from "./ClientLogos";
+import { PartnerLogos } from "./PartnerLogos"; // PartnerLogos import edildi
+import { Separator } from "@/components/ui/separator"; // Separator import edildi
 
 interface PortfolioSectionProps {
   category: PortfolioCategory;
@@ -34,7 +36,17 @@ export function PortfolioSection({ category, hideTitle = false, onImageClick }: 
             {getTurkishCategoryName(category)}
           </h2>
         )}
+        
+        {/* Müşteri Logoları */}
         <ClientLogos />
+
+        {/* Çözüm Ortakları Bölümü */}
+        <div className="mt-20 pt-10">
+          <h2 className="text-4xl font-extralight mb-10 text-center text-primary tracking-tight">
+            Çözüm Ortakları
+          </h2>
+          <PartnerLogos />
+        </div>
       </section>
     );
   }
