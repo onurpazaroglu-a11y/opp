@@ -15,23 +15,121 @@ export interface CategoryItem {
 }
 
 export const portfolioItems: PortfolioItem[] = [
-  // Mevcut Dış Mekan Öğeleri
+  // Dış Mekan Öğeleri (Exterior) - 16 adede kadar genişletildi
   {
     id: 1,
-    title: "Modern Villa Exterior",
+    title: "Modern Villa Exterior 1",
     category: "Exterior",
-    imageUrl: `/exterior/exterior-1.jpg`, // Varsayılan yerel yol
+    imageUrl: `/exterior/exterior-1.jpg`,
     description: "A sleek, minimalist villa design rendered under bright daylight.",
   },
   {
-    id: 4,
-    title: "Forest Cabin Render",
+    id: 2,
+    title: "Forest Cabin Render 2",
     category: "Exterior",
-    imageUrl: `/exterior/exterior-2.jpg`, // Varsayılan yerel yol
+    imageUrl: `/exterior/exterior-2.jpg`,
     description: "A rustic cabin nestled in a dense forest environment.",
   },
+  {
+    id: 3,
+    title: "Cityscape Project 3",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-3.jpg`,
+    description: "High-rise building visualization in an urban setting.",
+  },
+  {
+    id: 4,
+    title: "Residential Complex 4",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-4.jpg`,
+    description: "Large scale residential complex visualization.",
+  },
+  {
+    id: 5,
+    title: "Commercial Building 5",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-5.jpg`,
+    description: "Modern commercial office building exterior.",
+  },
+  {
+    id: 24,
+    title: "Exterior Project 6",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-6.jpg`,
+    description: "Exterior visualization project 6.",
+  },
+  {
+    id: 25,
+    title: "Exterior Project 7",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-7.jpg`,
+    description: "Exterior visualization project 7.",
+  },
+  {
+    id: 26,
+    title: "Exterior Project 8",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-8.jpg`,
+    description: "Exterior visualization project 8.",
+  },
+  {
+    id: 27,
+    title: "Exterior Project 9",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-9.jpg`,
+    description: "Exterior visualization project 9.",
+  },
+  {
+    id: 28,
+    title: "Exterior Project 10",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-10.jpg`,
+    description: "Exterior visualization project 10.",
+  },
+  {
+    id: 29,
+    title: "Exterior Project 11",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-11.jpg`,
+    description: "Exterior visualization project 11.",
+  },
+  {
+    id: 30,
+    title: "Exterior Project 12",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-12.jpg`,
+    description: "Exterior visualization project 12.",
+  },
+  {
+    id: 31,
+    title: "Exterior Project 13",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-13.jpg`,
+    description: "Exterior visualization project 13.",
+  },
+  {
+    id: 32,
+    title: "Exterior Project 14",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-14.jpg`,
+    description: "Exterior visualization project 14.",
+  },
+  {
+    id: 33,
+    title: "Exterior Project 15",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-15.jpg`,
+    description: "Exterior visualization project 15.",
+  },
+  {
+    id: 34,
+    title: "Exterior Project 16",
+    category: "Exterior",
+    imageUrl: `/exterior/exterior-16.jpg`,
+    description: "Exterior visualization project 16.",
+  },
   
-  // Yeni İç Mekan Öğeleri (public/interior klasöründen varsayılan görseller)
+  // İç Mekan Öğeleri (Interior) - 11 adet
   {
     id: 13,
     title: "Modern Mutfak Tasarımı",
@@ -60,7 +158,6 @@ export const portfolioItems: PortfolioItem[] = [
     imageUrl: `/interior/interior-4.jpg`,
     description: "Mermer ve cam detayların hakim olduğu modern banyo tasarımı.",
   },
-  // Eklenen 7 yeni İç Mekan Öğesi
   {
     id: 17,
     title: "İç Mekan Projesi 5",
