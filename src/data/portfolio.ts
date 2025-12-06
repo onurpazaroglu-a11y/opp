@@ -60,6 +60,56 @@ export const portfolioItems: PortfolioItem[] = [
     imageUrl: `/interior/interior-4.jpg`,
     description: "Mermer ve cam detayların hakim olduğu modern banyo tasarımı.",
   },
+  // Eklenen 7 yeni İç Mekan Öğesi
+  {
+    id: 17,
+    title: "İç Mekan Projesi 5",
+    category: "Interior",
+    imageUrl: `/interior/interior-5.jpg`,
+    description: "Eklenen iç mekan görseli 5.",
+  },
+  {
+    id: 18,
+    title: "İç Mekan Projesi 6",
+    category: "Interior",
+    imageUrl: `/interior/interior-6.jpg`,
+    description: "Eklenen iç mekan görseli 6.",
+  },
+  {
+    id: 19,
+    title: "İç Mekan Projesi 7",
+    category: "Interior",
+    imageUrl: `/interior/interior-7.jpg`,
+    description: "Eklenen iç mekan görseli 7.",
+  },
+  {
+    id: 20,
+    title: "İç Mekan Projesi 8",
+    category: "Interior",
+    imageUrl: `/interior/interior-8.jpg`,
+    description: "Eklenen iç mekan görseli 8.",
+  },
+  {
+    id: 21,
+    title: "İç Mekan Projesi 9",
+    category: "Interior",
+    imageUrl: `/interior/interior-9.jpg`,
+    description: "Eklenen iç mekan görseli 9.",
+  },
+  {
+    id: 22,
+    title: "İç Mekan Projesi 10",
+    category: "Interior",
+    imageUrl: `/interior/interior-10.jpg`,
+    description: "Eklenen iç mekan görseli 10.",
+  },
+  {
+    id: 23,
+    title: "İç Mekan Projesi 11",
+    category: "Interior",
+    imageUrl: `/interior/interior-11.jpg`,
+    description: "Eklenen iç mekan görseli 11.",
+  },
 
   // Müşteri Portföyü Öğeleri
   {
