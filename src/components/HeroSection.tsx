@@ -39,9 +39,9 @@ export function HeroSection() {
         </div>
       </div>
       
-      {/* 2. Full-Width Video Band - Başlığın hemen altına yerleştirildi */}
+      {/* 2. Full-Width Video Band - Yüksekliği h-64'ten h-[400px]'e çıkarıldı */}
       <div className="w-full mb-16">
-        <div className="w-full h-64 overflow-hidden shadow-2xl">
+        <div className="w-full h-[400px] overflow-hidden shadow-2xl">
           <video
             autoPlay
             loop
