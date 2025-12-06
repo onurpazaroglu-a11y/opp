@@ -25,11 +25,28 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-background/50 mix-blend-multiply"></div>
       </div>
 
-      {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-20 pb-12 container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 2. Full-Width Video Band - Tam genişlikte olması için ana container'ın dışına taşıyoruz */}
+      {/* Video bandını, diğer içeriklerin akışını bozmayacak şekilde konumlandırıyoruz. */}
+      <div className="w-full mb-16 mt-20"> {/* mt-20 SiteHeader'ın altından başlaması için */}
+        <div className="w-full h-64 overflow-hidden shadow-2xl">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            src="/home_bg.mp4" 
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      {/* Content Wrapper - Başlık ve Sosyal Bağlantılar için */}
+      <div className="relative z-10 flex flex-col items-center justify-start h-full container mx-auto px-4 sm:px-6 lg:px-8 -mt-80"> {/* Video bandının yüksekliğini telafi etmek için negatif margin kullanıyoruz */}
         
         {/* 1. Title and Subtitle (Top) */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 pt-20"> {/* pt-20 SiteHeader'ın altından başlaması için */}
           <h1 className="text-6xl md:text-8xl font-extralight tracking-widest mb-4 text-foreground">
             Onur PAZAROĞLU
           </h1>
@@ -38,24 +55,8 @@ export function HeroSection() {
           </p>
         </div>
 
-        {/* 2. Full-Width Video Band */}
-        <div className="w-full mb-16">
-          <div className="mx-auto rounded-lg max-w-6xl h-64 overflow-hidden shadow-2xl">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              src="/home_bg.mp4" 
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-
         {/* 3. Social Links (Bottom) */}
-        <div className="mt-auto">
+        <div className="mt-auto pt-12">
           <SocialLinks />
         </div>
       </div>
