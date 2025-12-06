@@ -9,7 +9,7 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram" },
   { icon: Youtube, href: "#", label: "YouTube" },
   { icon: Mail, href: "mailto:onur@example.com", label: "Email" }, // Placeholder email
 ];
