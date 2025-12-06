@@ -38,10 +38,19 @@ export function HeroSection() {
           </p>
         </div>
 
-        {/* 2. Full-Width Video Placeholder Band */}
+        {/* 2. Full-Width Video Band */}
         <div className="w-full mb-16">
-          <div className="bg-muted/50 border border-dashed border-muted-foreground/30 p-8 text-center text-lg text-muted-foreground mx-auto rounded-lg max-w-6xl h-64 flex items-center justify-center">
-            Video buraya gelecek (Ekran Genişliğinde Bant)
+          <div className="mx-auto rounded-lg max-w-6xl h-64 overflow-hidden shadow-2xl">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              src="/home_bg.mp4" 
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
