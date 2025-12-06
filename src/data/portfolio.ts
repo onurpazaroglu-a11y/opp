@@ -20,14 +20,14 @@ export const portfolioItems: PortfolioItem[] = [
     id: 1,
     title: "Modern Villa Exterior",
     category: "Exterior",
-    imageUrl: "/placeholder-exterior-1.jpg",
+    imageUrl: `https://picsum.photos/seed/1/800/600`,
     description: "A sleek, minimalist villa design rendered under bright daylight.",
   },
   {
     id: 4,
     title: "Forest Cabin Render",
     category: "Exterior",
-    imageUrl: "/placeholder-exterior-2.jpg",
+    imageUrl: `https://picsum.photos/seed/4/800/600`,
     description: "A rustic cabin nestled in a dense forest environment.",
   },
   
@@ -36,28 +36,28 @@ export const portfolioItems: PortfolioItem[] = [
     id: 13,
     title: "Modern Mutfak Tasarımı",
     category: "Interior",
-    imageUrl: "/interior/interior-1.jpg",
+    imageUrl: `https://picsum.photos/seed/13/800/600`,
     description: "Minimalist çizgilerle tasarlanmış, ferah ve modern mutfak renderı.",
   },
   {
     id: 14,
     title: "Lüks Oturma Odası",
     category: "Interior",
-    imageUrl: "/interior/interior-2.jpg",
+    imageUrl: `https://picsum.photos/seed/14/800/600`,
     description: "Yüksek tavanlı, doğal ışık alan lüks oturma odası render çalışması.",
   },
   {
     id: 15,
     title: "Yatak Odası Konsepti",
     category: "Interior",
-    imageUrl: "/interior/interior-3.jpg",
+    imageUrl: `https://picsum.photos/seed/15/800/600`,
     description: "Sakin renk paleti ve ahşap detaylarla tasarlanmış yatak odası.",
   },
   {
     id: 16,
     title: "Banyo Görselleştirme",
     category: "Interior",
-    imageUrl: "/interior/interior-4.jpg",
+    imageUrl: `https://picsum.photos/seed/16/800/600`,
     description: "Mermer ve cam detayların hakim olduğu modern banyo tasarımı.",
   },
 
@@ -66,7 +66,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 6,
     title: "Luxury Apartment Project",
     category: "Client Portfolio",
-    imageUrl: "/placeholder-client-1.jpg",
+    imageUrl: `https://picsum.photos/seed/6/800/600`,
     description: "A high-end residential project completed for a major developer.",
   },
   
@@ -75,7 +75,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 7,
     title: "Konut Projesi - Miami",
     category: "Animation",
-    imageUrl: "/placeholder-animation-7.jpg", // Geçici yer tutucu
+    imageUrl: `https://picsum.photos/seed/7/800/600`,
     description: "Miami'de bir konut projesinin animasyonu.",
     videoUrl: "https://youtu.be/qPgajiupIUc",
   },
@@ -83,7 +83,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 8,
     title: "Villa Projesi - Çeşme",
     category: "Animation",
-    imageUrl: "/placeholder-animation-8.jpg", // Geçici yer tutucu
+    imageUrl: `https://picsum.photos/seed/8/800/600`,
     description: "Çeşme'de lüks bir villa projesinin animasyonu.",
     videoUrl: "https://youtu.be/RqqQMvNl0go",
   },
@@ -91,7 +91,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 9,
     title: "Konut Projesi - USA",
     category: "Animation",
-    imageUrl: "/placeholder-animation-9.jpg", // Geçici yer tutucu
+    imageUrl: `https://picsum.photos/seed/9/800/600`,
     description: "ABD'de bir konut projesinin animasyonu.",
     videoUrl: "https://youtu.be/MnxQr288Ir0",
   },
@@ -99,7 +99,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 10,
     title: "Konut Projesi - Kadıköy",
     category: "Animation",
-    imageUrl: "/placeholder-animation-10.jpg", // Geçici yer tutucu
+    imageUrl: `https://picsum.photos/seed/10/800/600`,
     description: "Kadıköy'de bir konut projesinin animasyonu.",
     videoUrl: "https://youtu.be/Wl924dvRCzo",
   },
@@ -107,7 +107,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 11,
     title: "Kentsel Dönüşüm Projesi - Kadıköy",
     category: "Animation",
-    imageUrl: "/placeholder-animation-11.jpg", // Geçici yer tutucu
+    imageUrl: `https://picsum.photos/seed/11/800/600`,
     description: "Kadıköy'de kentsel dönüşüm projesi animasyonu.",
     videoUrl: "https://youtu.be/VyLKl5ZVOSc",
   },
@@ -115,7 +115,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 12,
     title: "Konut projesi - KKTC",
     category: "Animation",
-    imageUrl: "/placeholder-animation-12.jpg", // Geçici yer tutucu
+    imageUrl: `https://picsum.photos/seed/12/800/600`,
     description: "KKTC'de bir konut projesinin animasyonu.",
     videoUrl: "https://youtu.be/h9uo-GAceos",
   },
