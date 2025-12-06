@@ -44,9 +44,6 @@ export function HeroSection() {
             <Button asChild size="lg" className="text-lg px-8 py-6">
               <Link href="/portfolio">Portföyü İncele</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
-              <Link href="/teklif-iste">Teklif İste</Link> {/* Burası güncellendi */}
-            </Button>
           </div>
         </div>
       </div>
