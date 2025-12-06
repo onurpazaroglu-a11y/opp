@@ -1,5 +1,6 @@
 import { PortfolioCategory, PortfolioItem, portfolioItems } from "@/data/portfolio";
 import { PortfolioItemCard } from "./PortfolioItemCard";
+import { ClientLogos } from "./ClientLogos";
 
 interface PortfolioSectionProps {
   category: PortfolioCategory;
@@ -8,8 +9,6 @@ interface PortfolioSectionProps {
 }
 
 export function PortfolioSection({ category, hideTitle = false, onImageClick }: PortfolioSectionProps) {
-  const filteredItems = portfolioItems.filter((item: PortfolioItem) => item.category === category);
-
   // Kategori isimlerini Türkçe'ye çeviren yardımcı fonksiyon
   const getTurkishCategoryName = (category: PortfolioCategory): string => {
     switch (category) {
@@ -25,6 +24,23 @@ export function PortfolioSection({ category, hideTitle = false, onImageClick }: 
         return category;
     }
   };
+
+  // Müşteri Portföyü için özel render
+  if (category === "Client Portfolio") {
+    return (
+      <section id={category.toLowerCase().replace(/\s/g, '-')} className="py-8">
+        {!hideTitle && (
+          <h2 className="text-4xl font-extrabold mb-10 text-center text-primary tracking-tight">
+            {getTurkishCategoryName(category)}
+          </h2>
+        )}
+        <ClientLogos />
+      </section>
+    );
+  }
+
+  // Diğer kategoriler için normal portföy kartları
+  const filteredItems = portfolioItems.filter((item: PortfolioItem) => item.category === category);
 
   return (
     <section id={category.toLowerCase().replace(/\s/g, '-')} className="py-8">

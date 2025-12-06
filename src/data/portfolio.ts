@@ -142,14 +142,15 @@ export const portfolioItems: PortfolioItem[] = [
   // İç Mekan Öğeleri (Interior) - 20 adet
   ...interiorItems,
 
-  // Müşteri Portföyü Öğeleri
-  {
-    id: 60, // ID çakışmasını önlemek için yüksek bir değer verildi
-    title: "Luxury Apartment Project",
-    category: "Client Portfolio",
-    imageUrl: `/client/client-1.jpg`, // Varsayılan yerel yol
-    description: "A high-end residential project completed for a major developer.",
-  },
+  // Müşteri Portföyü Öğeleri (Bu kısım artık sadece bir placeholder olarak kalacak, asıl liste aşağıda)
+  // Bu öğeyi kaldırıyorum çünkü ClientLogos bileşeni ayrı bir liste kullanacak.
+  // {
+  //   id: 60, 
+  //   title: "Luxury Apartment Project",
+  //   category: "Client Portfolio",
+  //   imageUrl: `/client/client-1.jpg`, 
+  //   description: "A high-end residential project completed for a major developer.",
+  // },
   
   // Animasyon Öğeleri
   {
@@ -207,4 +208,32 @@ export const categories: CategoryItem[] = [
   { name: "Interior", href: "#interior" },
   { name: "Animation", href: "#animation" },
   { name: "Client Portfolio", href: "#client-portfolio" },
+];
+
+export const clientList: string[] = [
+  "Trion Tanıtım",
+  "Mekisan Asansör",
+  "Tolan Mimarlık",
+  "CSIN Studio",
+  "NEF",
+  "1217",
+  "TMD Architects",
+  "AKKA group",
+  "Seri Yapı İnşaat",
+  "Ser Mefruşat",
+  "SEM COLLECTIONS",
+  "Ergonomi İnşaat",
+  "İkiel Yapı Ürünleri",
+  "Ermanlar Mimarlık",
+  "Uzunal Vizyon",
+  "Uzunal TAU",
+  "SAY İnşaat",
+  "BENS Yapı",
+  "Karasu İnşaat",
+  "Backtobasics İletişim",
+  "Nebol Mimarlık",
+  "Seda Davran Mimarlık",
+  "Zeynep Helvacıoğlu İçmimarlık",
+  "VOG Design",
+  "YET Tasarım",
 ];
