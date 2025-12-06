@@ -66,7 +66,7 @@ export function RequestQuoteForm() {
     const subject = encodeURIComponent(`Yeni Teklif İsteği: ${values.projectType}`);
     
     const body = encodeURIComponent(
-      `Merhaba Onur Bey/Hanım,\n\n` +
+      `Merhaba Onur Bey,\n\n` + // Burası güncellendi
       `Aşağıdaki detaylarla ilgili teklif almak istiyorum:\n\n` +
       `Ad Soyad: ${values.name}\n` +
       `E-posta: ${values.email}\n` +
@@ -77,7 +77,7 @@ export function RequestQuoteForm() {
       `İyi çalışmalar.`
     );
 
-    // Mailto linki oluşturma - ALICI ADRESİ GÜNCELLENDİ
+    // Mailto linki oluşturma
     const mailtoLink = `mailto:onurpazaroglu@gmail.com?subject=${subject}&body=${body}`;
 
     // Yeni pencerede mailto linkini aç
