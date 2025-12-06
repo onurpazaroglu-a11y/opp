@@ -3,8 +3,8 @@ import { PortfolioItemCard } from "./PortfolioItemCard";
 
 interface PortfolioSectionProps {
   category: PortfolioCategory;
-  hideTitle?: boolean; // Yeni prop
-  onImageClick: (id: number) => void; // Yeni prop
+  hideTitle?: boolean;
+  onImageClick?: (id: number) => void; // İsteğe bağlı yapıldı
 }
 
 export function PortfolioSection({ category, hideTitle = false, onImageClick }: PortfolioSectionProps) {

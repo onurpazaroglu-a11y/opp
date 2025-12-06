@@ -6,7 +6,8 @@ import { PortfolioSection } from "./PortfolioSection";
 import { cn } from "@/lib/utils";
 
 interface PortfolioTabsProps {
-  onImageClick: (id: number) => void;
+  // onImageClick kaldırıldı
+  onImageClick?: (id: number) => void; // Geçici olarak isteğe bağlı yapıldı
 }
 
 // Kategori isimlerini Türkçe'ye çeviren yardımcı fonksiyon
@@ -52,7 +53,7 @@ export function PortfolioTabs({ onImageClick }: PortfolioTabsProps) {
       {/* İçerik Bölümleri */}
       {categories.map((category) => (
         <TabsContent key={category.name} value={category.name} className="mt-8">
-          {/* PortfolioSection, sadece seçili kategoriye ait öğeleri filtreleyecektir */}
+          {/* PortfolioSection'a onImageClick prop'u isteğe bağlı olarak gönderiliyor */}
           <PortfolioSection category={category.name} hideTitle={true} onImageClick={onImageClick} />
         </TabsContent>
       ))}

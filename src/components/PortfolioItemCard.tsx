@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 interface PortfolioItemCardProps {
   item: PortfolioItem;
-  onImageClick: (id: number) => void; // Yeni prop
+  onImageClick?: (id: number) => void; // İsteğe bağlı yapıldı
 }
 
 // YouTube URL'sinden video ID'sini çıkaran yardımcı fonksiyon
@@ -32,7 +32,7 @@ export function PortfolioItemCard({ item, onImageClick }: PortfolioItemCardProps
   const CardContentElement = (
     <Card className={cn(
       "overflow-hidden transition-transform duration-300 shadow-lg group",
-      isVideo || !isVideo ? "hover:scale-[1.02] cursor-pointer" : "" // Tüm kartlar hover efekti alsın
+      isVideo ? "hover:scale-[1.02] cursor-pointer" : "" // Sadece video ise hover efekti kalsın
     )}>
       <div className="relative w-full h-60 bg-muted">
         {/* Görüntü/Küçük Resim */}
@@ -67,14 +67,14 @@ export function PortfolioItemCard({ item, onImageClick }: PortfolioItemCardProps
     </Card>
   );
 
-  // 1. Video Öğeleri (Mevcut Dialog yapısını korur)
+  // 1. Video Öğeleri (Dialog yapısı korunur)
   if (isVideo && videoId) {
     const embedUrl = getYoutubeEmbedUrl(videoId);
     
     return (
       <Dialog>
         <DialogTrigger asChild>
-          <div className="block">{CardContentElement}</div>
+          <div className="block cursor-pointer">{CardContentElement}</div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[800px] p-0 border-none bg-transparent shadow-none">
           <div className="relative w-full pt-[56.25%]">
@@ -91,9 +91,9 @@ export function PortfolioItemCard({ item, onImageClick }: PortfolioItemCardProps
     );
   }
 
-  // 2. Görsel Öğeleri (Yeni Lightbox'ı tetikler)
+  // 2. Görsel Öğeleri (Lightbox kaldırıldı, sadece kartı göster)
   return (
-    <div className="block" onClick={() => onImageClick(item.id)}>
+    <div className="block">
       {CardContentElement}
     </div>
   );
