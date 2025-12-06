@@ -77,8 +77,8 @@ export function RequestQuoteForm() {
       `İyi çalışmalar.`
     );
 
-    // Mailto linki oluşturma
-    const mailtoLink = `mailto:onur@example.com?subject=${subject}&body=${body}`;
+    // Mailto linki oluşturma - ALICI ADRESİ GÜNCELLENDİ
+    const mailtoLink = `mailto:onurpazaroglu@gmail.com?subject=${subject}&body=${body}`;
 
     // Yeni pencerede mailto linkini aç
     window.open(mailtoLink, '_blank');
