@@ -30,13 +30,7 @@ export const portfolioItems: PortfolioItem[] = [
     imageUrl: "/placeholder-interior-1.jpg",
     description: "Warm and inviting interior space focusing on natural light and textures.",
   },
-  {
-    id: 3,
-    title: "Cityscape Flythrough",
-    category: "Animation",
-    imageUrl: "/placeholder-animation-1.jpg",
-    description: "30-second animated flythrough showcasing a high-rise development.",
-  },
+  // ID 3 (Cityscape Flythrough) kaldırıldı
   {
     id: 4,
     title: "Forest Cabin Render",
