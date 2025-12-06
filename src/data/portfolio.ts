@@ -15,7 +15,7 @@ export interface CategoryItem {
 }
 
 export const portfolioItems: PortfolioItem[] = [
-  // Mevcut Öğeler
+  // Mevcut Dış Mekan Öğeleri
   {
     id: 1,
     title: "Modern Villa Exterior",
@@ -24,27 +24,44 @@ export const portfolioItems: PortfolioItem[] = [
     description: "A sleek, minimalist villa design rendered under bright daylight.",
   },
   {
-    id: 2,
-    title: "Cozy Living Room",
-    category: "Interior",
-    imageUrl: "/placeholder-interior-1.jpg",
-    description: "Warm and inviting interior space focusing on natural light and textures.",
-  },
-  // ID 3 (Cityscape Flythrough) kaldırıldı
-  {
     id: 4,
     title: "Forest Cabin Render",
     category: "Exterior",
     imageUrl: "/placeholder-exterior-2.jpg",
     description: "A rustic cabin nestled in a dense forest environment.",
   },
+  
+  // Yeni İç Mekan Öğeleri (public/interior klasöründen varsayılan görseller)
   {
-    id: 5,
-    title: "Kitchen Design",
+    id: 13,
+    title: "Modern Mutfak Tasarımı",
     category: "Interior",
-    imageUrl: "/placeholder-interior-2.jpg",
-    description: "Contemporary kitchen design with marble countertops and dark cabinetry.",
+    imageUrl: "/interior/interior-1.jpg",
+    description: "Minimalist çizgilerle tasarlanmış, ferah ve modern mutfak renderı.",
   },
+  {
+    id: 14,
+    title: "Lüks Oturma Odası",
+    category: "Interior",
+    imageUrl: "/interior/interior-2.jpg",
+    description: "Yüksek tavanlı, doğal ışık alan lüks oturma odası render çalışması.",
+  },
+  {
+    id: 15,
+    title: "Yatak Odası Konsepti",
+    category: "Interior",
+    imageUrl: "/interior/interior-3.jpg",
+    description: "Sakin renk paleti ve ahşap detaylarla tasarlanmış yatak odası.",
+  },
+  {
+    id: 16,
+    title: "Banyo Görselleştirme",
+    category: "Interior",
+    imageUrl: "/interior/interior-4.jpg",
+    description: "Mermer ve cam detayların hakim olduğu modern banyo tasarımı.",
+  },
+
+  // Müşteri Portföyü Öğeleri
   {
     id: 6,
     title: "Luxury Apartment Project",
@@ -53,7 +70,7 @@ export const portfolioItems: PortfolioItem[] = [
     description: "A high-end residential project completed for a major developer.",
   },
   
-  // Yeni Animasyon Öğeleri
+  // Animasyon Öğeleri
   {
     id: 7,
     title: "Konut Projesi - Miami",
