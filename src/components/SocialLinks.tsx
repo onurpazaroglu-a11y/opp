@@ -21,13 +21,13 @@ export function SocialLinks() {
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Boyutları yaklaşık 3 kat büyütüldü (h-12 w-12 -> h-36 w-36)
+          // Buton boyutu h-36 w-36 olarak kalıyor
           className="h-36 w-36 text-foreground hover:text-primary transition-colors p-0" 
           asChild
         >
           <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer">
-            {/* İkon boyutları büyütüldü (h-8 w-8 -> h-24 w-24) */}
-            <link.icon className="h-24 w-24" />
+            {/* İkon boyutları daha da büyütüldü (h-32 w-32) */}
+            <link.icon className="h-32 w-32" />
           </Link>
         </Button>
       ))}
