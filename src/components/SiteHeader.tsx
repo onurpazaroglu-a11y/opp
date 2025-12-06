@@ -22,26 +22,41 @@ const languages = [
   { code: "RU", name: "Русский" },
 ];
 
+// Navigasyon öğeleri
+const navItems = [
+  { name: "Biografi", href: "#biography" },
+  { name: "Portföy", href: "#exterior" },
+  { name: "İletişim", href: "mailto:onur@example.com" },
+];
+
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState("TR"); // Default dil
 
-  // Mobil menüdeki navigasyon öğeleri (Eski navigasyon öğelerini koruyalım, ancak dil seçimi için kullanmayalım)
-  const navItems = [
-    { name: "Biografi", href: "#biography" },
-    { name: "Portföy", href: "#exterior" },
-    { name: "İletişim", href: "mailto:onur@example.com" },
-  ];
-
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link 
-          href="/" 
-          className="text-2xl font-extralight tracking-widest text-primary"
-        >
-          O.P.
-        </Link>
+        
+        {/* Desktop Navigation Dropdown (O.P. Button) */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button 
+              variant="ghost" 
+              className="text-2xl font-extralight tracking-widest text-primary p-0 h-auto hover:bg-transparent"
+            >
+              O.P.
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="w-40">
+            {navItems.map((item) => (
+              <DropdownMenuItem key={item.name} asChild>
+                <Link href={item.href} className="cursor-pointer">
+                  {item.name}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         {/* Desktop Language Selector */}
         <DropdownMenu>
@@ -68,7 +83,7 @@ export function SiteHeader() {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        {/* Mobile Menu Button (Hamburger) - Mobil menüde dil seçimi ve navigasyon için kullanılacak */}
+        {/* Mobile Menu Button (Hamburger) */}
         <Button
           variant="ghost"
           className="md:hidden"
@@ -80,7 +95,7 @@ export function SiteHeader() {
         </Button>
       </div>
 
-      {/* Mobile Menu Content - Mobil menüde hem navigasyon hem de dil seçimi gösterilebilir */}
+      {/* Mobile Menu Content */}
       <div
         className={cn(
           "md:hidden transition-all duration-300 ease-in-out overflow-hidden",
@@ -89,7 +104,7 @@ export function SiteHeader() {
       >
         <Separator />
         <nav className="flex flex-col p-4 space-y-2">
-          {/* Navigasyon Öğeleri (Eski menüdeki öğeler) */}
+          {/* Navigasyon Öğeleri (Mobil) */}
           {navItems.map((item) => (
             <Link
               key={item.name}
