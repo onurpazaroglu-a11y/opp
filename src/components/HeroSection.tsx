@@ -4,29 +4,7 @@ import { SocialLinks } from "./SocialLinks";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[80vh] flex flex-col items-center justify-center overflow-hidden bg-background">
-      {/* Social Links (Top of Hero) */}
-      <div className="relative z-10 pt-12">
-        <SocialLinks />
-      </div>
-
-      {/* Video Placeholder Band */}
-      <div className="relative z-10 my-12 w-full">
-        <div className="bg-muted/50 border border-dashed border-muted-foreground/30 p-4 text-center text-sm text-muted-foreground mx-auto max-w-md rounded-lg">
-          Video buraya gelecek
-        </div>
-      </div>
-
-      {/* Content (Bottom of Hero) */}
-      <div className="relative z-10 text-center p-4 pb-12">
-        <h1 className="text-6xl md:text-8xl font-extralight tracking-widest mb-4 text-foreground">
-          Onur PAZAROĞLU
-        </h1>
-        <p className="text-xl md:text-2xl font-extralight text-muted-foreground max-w-4xl mx-auto">
-          Proje ve Sunumlarınız için hızlı ve başarılı çözümler
-        </p>
-      </div>
-
+    <section className="relative min-h-[80vh] flex flex-col justify-start overflow-hidden bg-background">
       {/* Background Video Container (Moved to the very back) */}
       <div className="absolute inset-0 z-0">
         {/* 
@@ -45,6 +23,32 @@ export function HeroSection() {
         </video>
         {/* Metin okunabilirliğini artırmak için hafif bir overlay */}
         <div className="absolute inset-0 bg-background/50 mix-blend-multiply"></div>
+      </div>
+
+      {/* Content Wrapper */}
+      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-20 pb-12 container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* 1. Title and Subtitle (Top) */}
+        <div className="text-center mb-16">
+          <h1 className="text-6xl md:text-8xl font-extralight tracking-widest mb-4 text-foreground">
+            Onur PAZAROĞLU
+          </h1>
+          <p className="text-xl md:text-2xl font-extralight text-muted-foreground max-w-4xl mx-auto">
+            Proje ve sunumlarınız için en hızlı ve başarılı çözümler
+          </p>
+        </div>
+
+        {/* 2. Full-Width Video Placeholder Band */}
+        <div className="w-full mb-16">
+          <div className="bg-muted/50 border border-dashed border-muted-foreground/30 p-8 text-center text-lg text-muted-foreground mx-auto rounded-lg max-w-6xl h-64 flex items-center justify-center">
+            Video buraya gelecek (Ekran Genişliğinde Bant)
+          </div>
+        </div>
+
+        {/* 3. Social Links (Bottom) */}
+        <div className="mt-auto">
+          <SocialLinks />
+        </div>
       </div>
     </section>
   );
