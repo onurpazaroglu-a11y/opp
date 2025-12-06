@@ -1,4 +1,4 @@
-export type PortfolioCategory = "Exterior" | "Interior" | "Animation";
+export type PortfolioCategory = "Exterior" | "Interior" | "Animation" | "Client Portfolio";
 
 export interface PortfolioItem {
   id: number;
@@ -49,10 +49,18 @@ export const portfolioItems: PortfolioItem[] = [
     imageUrl: "/placeholder-interior-2.jpg",
     description: "Contemporary kitchen design with marble countertops and dark cabinetry.",
   },
+  {
+    id: 6,
+    title: "Luxury Apartment Project",
+    category: "Client Portfolio",
+    imageUrl: "/placeholder-client-1.jpg",
+    description: "A high-end residential project completed for a major developer.",
+  },
 ];
 
 export const categories: CategoryItem[] = [
   { name: "Exterior", href: "#exterior" },
   { name: "Interior", href: "#interior" },
   { name: "Animation", href: "#animation" },
+  { name: "Client Portfolio", href: "#client-portfolio" },
 ];

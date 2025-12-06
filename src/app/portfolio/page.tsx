@@ -1,6 +1,5 @@
-import { PortfolioSection } from "@/components/PortfolioSection";
-import { categories } from "@/data/portfolio";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { PortfolioTabs } from "@/components/PortfolioTabs";
 
 export default function PortfolioPage() {
   return (
@@ -9,9 +8,7 @@ export default function PortfolioPage() {
         Portföy Çalışmaları
       </h1>
       
-      {categories.map((category) => (
-        <PortfolioSection key={category.name} category={category.name} />
-      ))}
+      <PortfolioTabs />
       
       <div className="mt-12">
         <MadeWithDyad />
