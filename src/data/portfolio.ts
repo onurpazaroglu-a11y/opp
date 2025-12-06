@@ -231,6 +231,7 @@ export const clientList: string[] = [
   "Zeynep Helvacıoğlu İçmimarlık",
   "VOG Design",
   "YET Tasarım",
+  "Profem Mimarlık", // Yeni eklenen müşteri
 ];
 
 export const partnerList: PartnerItem[] = [
