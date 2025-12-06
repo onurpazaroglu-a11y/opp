@@ -21,13 +21,13 @@ export function SocialLinks() {
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Buton boyutu h-28 w-28
-          className="h-28 w-28 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
+          // Buton boyutu h-36 w-36 olarak büyütüldü
+          className="h-36 w-36 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
           asChild
         >
           <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-            {/* İkon boyutları h-24 w-24 */}
-            <link.icon className="h-24 w-24 transition-colors group-hover:text-primary" />
+            {/* İkon boyutları h-32 w-32 olarak büyütüldü */}
+            <link.icon className="h-32 w-32 transition-colors group-hover:text-primary" />
             {/* İkonların altına etiket eklenmedi, sadece ikonlar kullanıldı. */}
           </Link>
         </Button>
