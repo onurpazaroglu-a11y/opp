@@ -16,22 +16,22 @@ const socialLinks: SocialLink[] = [
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-16">
+    <div className="flex justify-center space-x-12">
       {socialLinks.map((link) => (
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Buton boyutu h-36 w-36 olarak ayarlandı
-          className="h-36 w-36 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
+          // Buton boyutu h-24 w-24 olarak ayarlandı (küçültüldü)
+          className="h-24 w-24 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
           asChild
         >
           <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-            {/* next/image ile özel logo kullanımı */}
+            {/* next/image boyutu 80px olarak ayarlandı */}
             <Image
               src={link.src}
               alt={link.label}
-              width={128} // h-32 w-32 (128px) boyutuna karşılık gelir
-              height={128}
+              width={80} 
+              height={80}
               className="transition-opacity duration-300 group-hover:opacity-80"
             />
           </Link>
