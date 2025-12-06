@@ -4,9 +4,10 @@ import { PortfolioItemCard } from "./PortfolioItemCard";
 interface PortfolioSectionProps {
   category: PortfolioCategory;
   hideTitle?: boolean; // Yeni prop
+  onImageClick: (id: number) => void; // Yeni prop
 }
 
-export function PortfolioSection({ category, hideTitle = false }: PortfolioSectionProps) {
+export function PortfolioSection({ category, hideTitle = false, onImageClick }: PortfolioSectionProps) {
   const filteredItems = portfolioItems.filter((item: PortfolioItem) => item.category === category);
 
   // Kategori isimlerini Türkçe'ye çeviren yardımcı fonksiyon
@@ -36,7 +37,7 @@ export function PortfolioSection({ category, hideTitle = false }: PortfolioSecti
       {filteredItems.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item: PortfolioItem) => (
-            <PortfolioItemCard key={item.id} item={item} />
+            <PortfolioItemCard key={item.id} item={item} onImageClick={onImageClick} />
           ))}
         </div>
       ) : (

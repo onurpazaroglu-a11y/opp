@@ -1,13 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PortfolioItem } from "@/data/portfolio";
 import Image from "next/image";
-import Link from "next/link";
 import { Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 interface PortfolioItemCardProps {
   item: PortfolioItem;
+  onImageClick: (id: number) => void; // Yeni prop
 }
 
 // YouTube URL'sinden video ID'sini çıkaran yardımcı fonksiyon
@@ -23,7 +23,7 @@ const getYoutubeEmbedUrl = (videoId: string): string => {
   return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 };
 
-export function PortfolioItemCard({ item }: PortfolioItemCardProps) {
+export function PortfolioItemCard({ item, onImageClick }: PortfolioItemCardProps) {
   const isVideo = !!item.videoUrl;
   const videoId = isVideo ? getYoutubeVideoId(item.videoUrl!) : null;
   const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : item.imageUrl;
@@ -31,8 +31,8 @@ export function PortfolioItemCard({ item }: PortfolioItemCardProps) {
   // Kartın görsel içeriği
   const CardContentElement = (
     <Card className={cn(
-      "overflow-hidden transition-transform duration-300 shadow-lg",
-      isVideo ? "hover:scale-[1.02] cursor-pointer" : ""
+      "overflow-hidden transition-transform duration-300 shadow-lg group",
+      isVideo || !isVideo ? "hover:scale-[1.02] cursor-pointer" : "" // Tüm kartlar hover efekti alsın
     )}>
       <div className="relative w-full h-60 bg-muted">
         {/* Görüntü/Küçük Resim */}
@@ -67,18 +67,17 @@ export function PortfolioItemCard({ item }: PortfolioItemCardProps) {
     </Card>
   );
 
+  // 1. Video Öğeleri (Mevcut Dialog yapısını korur)
   if (isVideo && videoId) {
     const embedUrl = getYoutubeEmbedUrl(videoId);
     
     return (
       <Dialog>
         <DialogTrigger asChild>
-          {/* DialogTrigger olarak CardContentElement'ı kullanıyoruz */}
           <div className="block">{CardContentElement}</div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[800px] p-0 border-none bg-transparent shadow-none">
-          {/* Video oynatıcı için 16:9 oranında responsive container */}
-          <div className="relative w-full pt-[56.25%]"> {/* 16:9 Aspect Ratio */}
+          <div className="relative w-full pt-[56.25%]">
             <iframe
               className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
               src={embedUrl}
@@ -92,10 +91,9 @@ export function PortfolioItemCard({ item }: PortfolioItemCardProps) {
     );
   }
 
-  // Video olmayan veya video ID'si alınamayan öğeler için
-  // Bu öğeler tıklanabilir olmayacak (Link sarmalayıcısı kaldırıldı)
+  // 2. Görsel Öğeleri (Yeni Lightbox'ı tetikler)
   return (
-    <div className="block">
+    <div className="block" onClick={() => onImageClick(item.id)}>
       {CardContentElement}
     </div>
   );

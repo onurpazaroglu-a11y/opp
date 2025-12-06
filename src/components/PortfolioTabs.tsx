@@ -5,6 +5,10 @@ import { categories, PortfolioCategory } from "@/data/portfolio";
 import { PortfolioSection } from "./PortfolioSection";
 import { cn } from "@/lib/utils";
 
+interface PortfolioTabsProps {
+  onImageClick: (id: number) => void;
+}
+
 // Kategori isimlerini Türkçe'ye çeviren yardımcı fonksiyon
 const getTurkishCategoryName = (category: PortfolioCategory): string => {
   switch (category) {
@@ -21,7 +25,7 @@ const getTurkishCategoryName = (category: PortfolioCategory): string => {
   }
 };
 
-export function PortfolioTabs() {
+export function PortfolioTabs({ onImageClick }: PortfolioTabsProps) {
   // İlk kategori varsayılan olarak seçili olacak
   const defaultCategory = categories[0]?.name || "Exterior";
 
@@ -49,7 +53,7 @@ export function PortfolioTabs() {
       {categories.map((category) => (
         <TabsContent key={category.name} value={category.name} className="mt-8">
           {/* PortfolioSection, sadece seçili kategoriye ait öğeleri filtreleyecektir */}
-          <PortfolioSection category={category.name} hideTitle={true} />
+          <PortfolioSection category={category.name} hideTitle={true} onImageClick={onImageClick} />
         </TabsContent>
       ))}
     </Tabs>
