@@ -6,6 +6,7 @@ export interface PortfolioItem {
   category: PortfolioCategory;
   imageUrl: string; // Placeholder for image path
   description: string;
+  videoUrl?: string; // Yeni alan
 }
 
 export interface CategoryItem {
@@ -14,6 +15,7 @@ export interface CategoryItem {
 }
 
 export const portfolioItems: PortfolioItem[] = [
+  // Mevcut Öğeler
   {
     id: 1,
     title: "Modern Villa Exterior",
@@ -55,6 +57,56 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Client Portfolio",
     imageUrl: "/placeholder-client-1.jpg",
     description: "A high-end residential project completed for a major developer.",
+  },
+  
+  // Yeni Animasyon Öğeleri
+  {
+    id: 7,
+    title: "Konut Projesi - Miami",
+    category: "Animation",
+    imageUrl: "/placeholder-animation-7.jpg", // Geçici yer tutucu
+    description: "Miami'de bir konut projesinin animasyonu.",
+    videoUrl: "https://youtu.be/qPgajiupIUc",
+  },
+  {
+    id: 8,
+    title: "Villa Projesi - Çeşme",
+    category: "Animation",
+    imageUrl: "/placeholder-animation-8.jpg", // Geçici yer tutucu
+    description: "Çeşme'de lüks bir villa projesinin animasyonu.",
+    videoUrl: "https://youtu.be/RqqQMvNl0go",
+  },
+  {
+    id: 9,
+    title: "Konut Projesi - USA",
+    category: "Animation",
+    imageUrl: "/placeholder-animation-9.jpg", // Geçici yer tutucu
+    description: "ABD'de bir konut projesinin animasyonu.",
+    videoUrl: "https://youtu.be/MnxQr288Ir0",
+  },
+  {
+    id: 10,
+    title: "Konut Projesi - Kadıköy",
+    category: "Animation",
+    imageUrl: "/placeholder-animation-10.jpg", // Geçici yer tutucu
+    description: "Kadıköy'de bir konut projesinin animasyonu.",
+    videoUrl: "https://youtu.be/Wl924dvRCzo",
+  },
+  {
+    id: 11,
+    title: "Kentsel Dönüşüm Projesi - Kadıköy",
+    category: "Animation",
+    imageUrl: "/placeholder-animation-11.jpg", // Geçici yer tutucu
+    description: "Kadıköy'de kentsel dönüşüm projesi animasyonu.",
+    videoUrl: "https://youtu.be/VyLKl5ZVOSc",
+  },
+  {
+    id: 12,
+    title: "Konut projesi - KKTC",
+    category: "Animation",
+    imageUrl: "/placeholder-animation-12.jpg", // Geçici yer tutucu
+    description: "KKTC'de bir konut projesinin animasyonu.",
+    videoUrl: "https://youtu.be/h9uo-GAceos",
   },
 ];
 
