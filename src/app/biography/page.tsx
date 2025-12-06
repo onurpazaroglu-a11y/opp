@@ -1,6 +1,6 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Separator } from "@/components/ui/separator";
-import { Briefcase, GraduationCap, Award, Zap } from "lucide-react";
+import { Briefcase, GraduationCap, Award } from "lucide-react";
 
 // Deneyim verileri (Yeni metne uygun olarak güncellendi)
 const experience = [
@@ -28,17 +28,6 @@ const education = [
     duration: "Mezuniyet: 2012",
     icon: GraduationCap,
   },
-];
-
-// Yetenekler
-const skills = [
-  "3ds Max & V-Ray/Corona Render",
-  "Unreal Engine (Gerçek Zamanlı Görselleştirme)",
-  "Adobe Photoshop & After Effects",
-  "Revit & AutoCAD",
-  "Proje Yönetimi",
-  "Konsept Geliştirme",
-  "İmalat Çizimleri",
 ];
 
 export default function BiographyPage() {
@@ -111,23 +100,6 @@ export default function BiographyPage() {
                 <p className="text-md font-medium text-muted-foreground">{item.degree}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{item.duration}</p>
               </div>
-            ))}
-          </div>
-        </section>
-
-        <Separator className="my-12" />
-
-        {/* Yetenekler */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-8 flex items-center text-foreground">
-            <Zap className="h-6 w-6 mr-3 text-primary" />
-            Temel Yetenekler
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill, index) => (
-              <span key={index} className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium shadow-sm">
-                {skill}
-              </span>
             ))}
           </div>
         </section>
