@@ -51,12 +51,22 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
         className={cn(
-          // Tam ekranı kapla ve sabit konumlandır
-          "fixed inset-0 max-w-full max-h-full w-screen h-screen p-0 bg-black/90 border-none",
+          // Full screen, fixed position, high z-index
+          "fixed inset-0 max-w-full max-h-full w-screen h-screen p-0 bg-black/90 border-none z-[9999]",
+          
+          // Varsayılan centering (top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]) sınıflarını sıfırlıyoruz
+          "top-0 left-0 translate-x-0 translate-y-0", 
+          
           // İçeriği ortala
-          "flex flex-col items-center justify-center z-[9999]",
-          // Shadcn/UI'ın varsayılan transformasyonlarını ezmek için
-          "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]"
+          "flex flex-col items-center justify-center",
+          
+          // Animasyonları sadece fade/zoom olarak ayarlıyoruz, slide animasyonlarını devre dışı bırakıyoruz
+          "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
+          "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95",
+          
+          // Kaydırma animasyonlarını sıfırlıyoruz
+          "data-[state=open]:slide-in-from-left-0 data-[state=open]:slide-in-from-top-0",
+          "data-[state=closed]:slide-out-to-left-0 data-[state=closed]:slide-out-to-top-0"
         )}
         // DialogContent'ın kapanma düğmesini gizle
         onInteractOutside={(e) => e.preventDefault()}
