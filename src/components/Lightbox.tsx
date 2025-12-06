@@ -51,13 +51,16 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
         className={cn(
+          // Tam ekranı kapla ve sabit konumlandır
           "fixed inset-0 max-w-full max-h-full w-screen h-screen p-0 bg-black/90 border-none",
-          "flex flex-col items-center justify-center z-[9999]"
+          // İçeriği ortala
+          "flex flex-col items-center justify-center z-[9999]",
+          // Shadcn/UI'ın varsayılan transformasyonlarını ezmek için
+          "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]"
         )}
         // DialogContent'ın kapanma düğmesini gizle
         onInteractOutside={(e) => e.preventDefault()}
       >
-        {/* Erişilebilirlik için görsel olarak gizlenmiş DialogTitle eklendi */}
         <DialogTitle className="sr-only">
           {currentItem.title} - Portföy Görseli
         </DialogTitle>
