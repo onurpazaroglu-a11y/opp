@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Youtube, Mail } from "lucide-react";
+import { Camera, Video, Send } from "lucide-react"; // İkonlar güncellendi
 import { Button } from "@/components/ui/button";
 
 interface SocialLink {
@@ -9,9 +9,9 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { icon: Instagram, href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Mail, href: "mailto:onur@example.com", label: "Email" }, // Placeholder email
+  { icon: Camera, href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram" },
+  { icon: Video, href: "#", label: "YouTube" },
+  { icon: Send, href: "mailto:onur@example.com", label: "Email" }, // Placeholder email
 ];
 
 export function SocialLinks() {
