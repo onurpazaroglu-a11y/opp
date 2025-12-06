@@ -43,12 +43,16 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
   // Sadece görsel öğeleri için Lightbox'ı kullanıyoruz.
   if (currentItem.videoUrl) return null;
 
+  // Lightbox'ın tam ekran modunda olup olmadığını kontrol etmek için
+  const isFirst = currentIndex === 0;
+  const isLast = currentIndex === items.length - 1;
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
         className={cn(
           "fixed inset-0 max-w-full max-h-full w-screen h-screen p-0 bg-black/90 border-none",
-          "flex items-center justify-center z-[9999]" // Yüksek z-index
+          "flex flex-col items-center justify-center z-[9999]" // Tam ekranı kapla ve içeriği ortala
         )}
         // DialogContent'ın kapanma düğmesini gizle
         onInteractOutside={(e) => e.preventDefault()}
@@ -69,7 +73,7 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
           size="icon"
           className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50 text-white hover:bg-white/20 disabled:opacity-30"
           onClick={() => onNavigate("prev")}
-          disabled={currentIndex === 0}
+          disabled={isFirst}
         >
           <ChevronLeft className="h-8 w-8" />
         </Button>
@@ -79,27 +83,36 @@ export function Lightbox({ items, currentIndex, onClose, onNavigate }: LightboxP
           size="icon"
           className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 text-white hover:bg-white/20 disabled:opacity-30"
           onClick={() => onNavigate("next")}
-          disabled={currentIndex === items.length - 1}
+          disabled={isLast}
         >
           <ChevronRight className="h-8 w-8" />
         </Button>
 
         {/* Görsel İçeriği */}
-        <div className="relative w-full h-full flex items-center justify-center p-8 sm:p-12">
+        {/* Görseli ortalamak için flex yapısını kullanıyoruz */}
+        <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-8 lg:p-12">
           <div className="relative max-w-full max-h-full w-auto h-auto">
             <Image
               src={currentItem.imageUrl}
               alt={currentItem.title}
-              width={1600} // Maksimum genişlik
-              height={900} // Maksimum yükseklik
-              style={{ objectFit: 'contain', width: 'auto', height: 'auto', maxHeight: 'calc(100vh - 96px)', maxWidth: 'calc(100vw - 96px)' }}
+              // Next/Image'ın boyutlandırmasını daha iyi kontrol etmek için fill kullanıp, 
+              // kapsayıcı div'in boyutunu sınırlayabiliriz. Ancak mevcut yapıda 'contain' ile devam edelim.
+              width={1600} 
+              height={900} 
+              style={{ 
+                objectFit: 'contain', 
+                width: 'auto', 
+                height: 'auto', 
+                maxHeight: 'calc(100vh - 120px)', // Başlık/Açıklama ve padding için biraz boşluk bırakıldı
+                maxWidth: 'calc(100vw - 120px)' 
+              }}
               className="rounded-lg shadow-2xl"
             />
           </div>
         </div>
         
         {/* Başlık ve Açıklama (Altta) */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white text-center">
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 text-white text-center z-50">
             <h3 className="text-lg font-semibold">{currentItem.title}</h3>
             <p className="text-sm text-gray-300">{currentItem.description}</p>
         </div>
