@@ -12,9 +12,6 @@ export function HeroSection() {
         {/* 
           Kullanıcının video dosyasını public/archviz-video.mp4 yoluna eklemesi gerekmektedir.
           Video, düşük opasite (opacity-10) ile şeffaf görünecek ve sürekli tekrarlayacaktır.
-          
-          NOT: 'File not found' hatasını önlemek için video src geçici olarak kaldırıldı.
-          Lütfen public klasörüne archviz-video.mp4 dosyasını ekledikten sonra src özelliğini geri ekleyin.
         */}
         <video
           autoPlay
@@ -22,7 +19,7 @@ export function HeroSection() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-10 transition-opacity duration-500"
-          // src="/archviz-video.mp4" 
+          src="/archviz-video.mp4" 
         >
           Your browser does not support the video tag.
         </video>
@@ -63,7 +60,7 @@ export function HeroSection() {
             muted
             playsInline
             className="w-full h-full object-cover"
-            // src="/home_bg.mp4" 
+            src="/home_bg.mp4" 
           >
             Your browser does not support the video tag.
           </video>
