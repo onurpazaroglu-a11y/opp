@@ -38,13 +38,6 @@ export default function PortfolioPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-[80vh]">
       
-      {/* Üst Bant: Müşteri Portföyü Başlığı */}
-      <div className="w-full py-10 mb-12 bg-secondary/50 border-y border-border/50">
-        <h1 className="text-5xl font-extralight text-center text-primary tracking-tight">
-          Müşteri Portföyü
-        </h1>
-      </div>
-      
       {/* Portfolio Tabs (İçinde Müşteri Portföyü sekmesi de var) */}
       <PortfolioTabs onImageClick={handleOpenLightbox} />
       
