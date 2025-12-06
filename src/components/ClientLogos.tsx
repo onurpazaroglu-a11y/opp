@@ -1,24 +1,17 @@
 import { clientList } from "@/data/portfolio";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 export function ClientLogos() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-6">
       {clientList.map((clientName, index) => (
-        <Card 
+        <div 
           key={index} 
-          className={cn(
-            "flex items-center justify-center h-24 text-center transition-all duration-300",
-            "bg-muted/50 hover:bg-muted border-border/50 hover:border-primary/50"
-          )}
+          className="flex items-center justify-center h-12 text-center"
         >
-          <CardContent className="p-4 flex items-center justify-center h-full">
-            <p className="text-sm font-semibold text-foreground/80 leading-snug">
-              {clientName}
-            </p>
-          </CardContent>
-        </Card>
+          <p className="text-lg font-medium text-foreground/90 leading-snug hover:text-primary transition-colors duration-200">
+            {clientName}
+          </p>
+        </div>
       ))}
     </div>
   );

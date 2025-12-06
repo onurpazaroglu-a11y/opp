@@ -142,16 +142,6 @@ export const portfolioItems: PortfolioItem[] = [
   // İç Mekan Öğeleri (Interior) - 20 adet
   ...interiorItems,
 
-  // Müşteri Portföyü Öğeleri (Bu kısım artık sadece bir placeholder olarak kalacak, asıl liste aşağıda)
-  // Bu öğeyi kaldırıyorum çünkü ClientLogos bileşeni ayrı bir liste kullanacak.
-  // {
-  //   id: 60, 
-  //   title: "Luxury Apartment Project",
-  //   category: "Client Portfolio",
-  //   imageUrl: `/client/client-1.jpg`, 
-  //   description: "A high-end residential project completed for a major developer.",
-  // },
-  
   // Animasyon Öğeleri
   {
     id: 70,
@@ -216,7 +206,7 @@ export const clientList: string[] = [
   "Tolan Mimarlık",
   "CSIN Studio",
   "NEF",
-  "1217",
+  "1217 Interiors", // Burası güncellendi
   "TMD Architects",
   "AKKA group",
   "Seri Yapı İnşaat",
