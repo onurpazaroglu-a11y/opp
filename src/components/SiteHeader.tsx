@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, User, Briefcase, Mail, ChevronDown, X } from "lucide-react";
+import { Menu, ChevronDown, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -11,18 +11,27 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 
-// Yeni navigasyon öğeleri
-const navItems = [
-  { name: "Biografi", href: "#biography", icon: User },
-  { name: "Portföy", href: "#exterior", icon: Briefcase },
-  { name: "İletişim", href: "mailto:onur@example.com", icon: Mail },
+// Dil seçenekleri
+const languages = [
+  { code: "TR", name: "Türkçe" },
+  { code: "EN", name: "English" },
+  { code: "FR", name: "Français" },
+  { code: "DE", name: "Deutsch" },
+  { code: "RU", name: "Русский" },
 ];
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState("TR"); // Default dil
+
+  // Mobil menüdeki navigasyon öğeleri (Eski navigasyon öğelerini koruyalım, ancak dil seçimi için kullanmayalım)
+  const navItems = [
+    { name: "Biografi", href: "#biography" },
+    { name: "Portföy", href: "#exterior" },
+    { name: "İletişim", href: "mailto:onur@example.com" },
+  ];
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -34,27 +43,32 @@ export function SiteHeader() {
           O.P.
         </Link>
 
-        {/* Desktop Navigation (Dropdown Menu) */}
+        {/* Desktop Language Selector */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="hidden md:flex items-center space-x-1 text-sm font-medium text-muted-foreground hover:text-primary">
-              Menü
+              <Globe className="h-4 w-4 mr-1" />
+              {currentLang}
               <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-200" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-56">
-            {navItems.map((item) => (
-              <DropdownMenuItem key={item.name} asChild>
-                <Link href={item.href} className="flex items-center">
-                  <item.icon className="mr-2 h-4 w-4" />
-                  <span>{item.name}</span>
-                </Link>
+          <DropdownMenuContent align="end" className="w-40">
+            {languages.map((lang) => (
+              <DropdownMenuItem 
+                key={lang.code} 
+                onClick={() => setCurrentLang(lang.code)}
+                className={cn(
+                    "cursor-pointer",
+                    currentLang === lang.code && "bg-accent text-accent-foreground"
+                )}
+              >
+                <span>{lang.name} ({lang.code})</span>
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
 
-        {/* Mobile Menu Button (Hamburger) */}
+        {/* Mobile Menu Button (Hamburger) - Mobil menüde dil seçimi ve navigasyon için kullanılacak */}
         <Button
           variant="ghost"
           className="md:hidden"
@@ -66,15 +80,16 @@ export function SiteHeader() {
         </Button>
       </div>
 
-      {/* Mobile Menu Content */}
+      {/* Mobile Menu Content - Mobil menüde hem navigasyon hem de dil seçimi gösterilebilir */}
       <div
         className={cn(
           "md:hidden transition-all duration-300 ease-in-out overflow-hidden",
-          isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <Separator />
         <nav className="flex flex-col p-4 space-y-2">
+          {/* Navigasyon Öğeleri (Eski menüdeki öğeler) */}
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -82,10 +97,29 @@ export function SiteHeader() {
               onClick={() => setIsOpen(false)}
               className="text-base font-medium text-foreground hover:text-primary transition-colors p-2 rounded-md hover:bg-accent flex items-center"
             >
-              <item.icon className="mr-2 h-4 w-4" />
               {item.name}
             </Link>
           ))}
+          
+          <Separator className="my-2" />
+
+          {/* Dil Seçimi (Mobil) */}
+          <div className="px-2 pt-2 text-sm font-semibold text-muted-foreground">Dil Seçimi</div>
+          <div className="grid grid-cols-3 gap-2 p-2">
+            {languages.map((lang) => (
+              <Button
+                key={lang.code}
+                variant={currentLang === lang.code ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                    setCurrentLang(lang.code);
+                    setIsOpen(false);
+                }}
+              >
+                {lang.code}
+              </Button>
+            ))}
+          </div>
         </nav>
       </div>
     </header>
