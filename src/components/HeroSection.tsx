@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { SocialLinks } from "./SocialLinks";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -33,9 +35,19 @@ export function HeroSection() {
           <h1 className="text-6xl md:text-8xl font-extralight tracking-widest mb-4 text-foreground">
             Onur PAZAROĞLU
           </h1>
-          <p className="text-xl md:text-2xl font-extralight text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl font-extralight text-muted-foreground max-w-4xl mx-auto mb-8">
             Proje sunumlarınız için en hızlı ve başarılı çözümler
           </p>
+
+          {/* Yeni Butonlar */}
+          <div className="flex justify-center space-x-4">
+            <Button asChild size="lg" className="text-lg px-8 py-6">
+              <Link href="#exterior">Portföyü İncele</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
+              <Link href="mailto:onur@example.com">Teklif İste</Link>
+            </Button>
+          </div>
         </div>
       </div>
       
