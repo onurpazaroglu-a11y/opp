@@ -11,17 +11,19 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   { src: "/logo-instagram.svg", href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram Logo" },
   { src: "/logo-youtube.svg", href: "#", label: "YouTube Logo" },
+  { src: "/logo-linkedin.svg", href: "https://www.linkedin.com/in/onurpazaroglu/", label: "LinkedIn Logo" }, // Yeni LinkedIn bağlantısı
   { src: "/logo-mail.svg", href: "mailto:onur@example.com", label: "Email Logo" }, // Placeholder email
 ];
 
 export function SocialLinks() {
   return (
-    <div className="flex justify-center space-x-12">
+    // max-w-2xl ile genişliği sınırlandırıp, justify-between ile eşit dağıtıyoruz.
+    <div className="flex justify-between max-w-2xl mx-auto">
       {socialLinks.map((link) => (
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Buton boyutu h-24 w-24 olarak ayarlandı (küçültüldü)
+          // Buton boyutu h-24 w-24 olarak ayarlandı
           className="h-24 w-24 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
           asChild
         >
