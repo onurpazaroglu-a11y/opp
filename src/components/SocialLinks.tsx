@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { Instagram, Youtube, Mail } from "lucide-react"; // İkonlar güncellendi
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface SocialLink {
-  icon: React.ElementType;
+  src: string; // Logo dosya yolu
   href: string;
   label: string;
 }
 
 const socialLinks: SocialLink[] = [
-  { icon: Instagram, href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Mail, href: "mailto:onur@example.com", label: "Email" }, // Placeholder email
+  { src: "/logo-instagram.svg", href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram Logo" },
+  { src: "/logo-youtube.svg", href: "#", label: "YouTube Logo" },
+  { src: "/logo-mail.svg", href: "mailto:onur@example.com", label: "Email Logo" }, // Placeholder email
 ];
 
 export function SocialLinks() {
@@ -21,14 +21,19 @@ export function SocialLinks() {
         <Button 
           key={link.label} 
           variant="ghost" 
-          // Buton boyutu h-36 w-36 olarak büyütüldü
+          // Buton boyutu h-36 w-36 olarak ayarlandı
           className="h-36 w-36 text-foreground hover:text-primary transition-colors p-0 flex flex-col items-center justify-center group" 
           asChild
         >
           <Link href={link.href} aria-label={link.label} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-            {/* İkon boyutları h-32 w-32 olarak büyütüldü */}
-            <link.icon className="h-32 w-32 transition-colors group-hover:text-primary" />
-            {/* İkonların altına etiket eklenmedi, sadece ikonlar kullanıldı. */}
+            {/* next/image ile özel logo kullanımı */}
+            <Image
+              src={link.src}
+              alt={link.label}
+              width={128} // h-32 w-32 (128px) boyutuna karşılık gelir
+              height={128}
+              className="transition-opacity duration-300 group-hover:opacity-80"
+            />
           </Link>
         </Button>
       ))}
