@@ -2,36 +2,30 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Separator } from "@/components/ui/separator";
 import { Briefcase, GraduationCap, Award, Zap } from "lucide-react";
 
-// Deneyim verileri
+// Deneyim verileri (Yeni metne uygun olarak güncellendi)
 const experience = [
   {
-    title: "Kıdemli Mimari Görselleştirme Uzmanı",
-    company: "XYZ Studio",
-    duration: "2018 - Günümüz",
-    description: "Büyük ölçekli konut ve ticari projeler için fotogerçekçi 3D görseller ve animasyonlar ürettim. Ekip liderliği ve proje yönetimi görevlerini üstlendim.",
+    title: "Serbest Çalışan / Görselleştirme ve Tasarım Uzmanı",
+    company: "Freelance & Çeşitli Firmalar",
+    duration: "2004 - Günümüz",
+    description: "20 yılı aşkın süredir ürün tasarımı ve iç mimarlık alanlarında konut, ticari projeler, tanıtım ve fuar projeleri, yat projeleri, ürün patent çizimleri, ürün görselleştirmeleri, cephe ve araç giydirme işleri gibi çeşitli alanlarda hizmet verdim.",
     icon: Briefcase,
   },
   {
-    title: "Serbest Çalışan 3D Sanatçısı",
-    company: "Freelance",
-    duration: "2016 - 2018",
-    description: "Çeşitli mimarlık ofisleri ve inşaat firmaları için bağımsız görselleştirme hizmetleri sundum.",
+    title: "Mimari Görselleştirme ve Proje Yönetimi",
+    company: "Çeşitli Firmalar",
+    duration: "2012 - Günümüz",
+    description: "Projelerin başlangıcından teslimine kadar süre, gereklilikler ve opsiyonları göz önüne alarak proje takvimi hazırlama ve görselleştirme hizmeti sağlama. İstenilirse projeye bağlı imalat – üretim çizimleri hazırlama.",
     icon: Briefcase,
   },
 ];
 
-// Eğitim verileri
+// Eğitim verileri (Yeni metne uygun olarak güncellendi)
 const education = [
   {
-    institution: "İstanbul Teknik Üniversitesi",
-    degree: "Mimarlık Yüksek Lisansı",
-    duration: "2014 - 2016",
-    icon: GraduationCap,
-  },
-  {
     institution: "Mimar Sinan Güzel Sanatlar Üniversitesi",
-    degree: "Mimarlık Lisansı",
-    duration: "2010 - 2014",
+    degree: "Endüstri Ürünleri Tasarımı Lisansı",
+    duration: "Mezuniyet: 2012",
     icon: GraduationCap,
   },
 ];
@@ -44,6 +38,7 @@ const skills = [
   "Revit & AutoCAD",
   "Proje Yönetimi",
   "Konsept Geliştirme",
+  "İmalat Çizimleri",
 ];
 
 export default function BiographyPage() {
@@ -57,14 +52,22 @@ export default function BiographyPage() {
           Onur Pazaroğlu'nun kariyer yolculuğu, deneyimleri ve yetenekleri.
         </p>
 
-        {/* Giriş ve Kişisel Bilgiler */}
+        {/* Giriş ve Kişisel Bilgiler (Hakkımda) */}
         <section className="mb-12 p-6 bg-card rounded-lg shadow-lg">
           <h2 className="text-3xl font-semibold mb-4 flex items-center text-foreground">
             <Award className="h-6 w-6 mr-3 text-primary" />
             Hakkımda
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Mimari görselleştirme alanında 8 yılı aşkın deneyime sahip bir profesyonelim. Estetik anlayışımı teknik mükemmeliyetle birleştirerek, projelerinizi en etkileyici şekilde hayata geçiriyorum. Amacım, müşterilerimin vizyonunu aşan, duygusal bağ kuran ve satış başarısını artıran görseller üretmektir.
+          <p className="text-lg text-muted-foreground leading-relaxed space-y-4">
+            <p>
+              2012 Mimar Sinan Üniversitesi, Endüstri Ürünleri Tasarımı bölümü mezunuyum. 2004 yılından itibaren freelance, ve full time olarak çeşitli alanlarda hizmet veren firmalarda çalıştım. Ürün tasarımı ve iç Mimarlık alanlarında 20 yılı aşkın süredir çalışmalarım oldu.
+            </p>
+            <p>
+              Bu çalışmalar arasında konut, ticari projeler, tanıtım ve fuar projeleri, yat projeleri, ürün patent çizimleri, ürün görselleştirmeleri, cephe ve araç giydirme işleri gibi alanlar yer aldı.
+            </p>
+            <p>
+              Projelerinize istekleriniz doğrultusunda görselleştirme hizmeti sağlamaktayım. Proje başlangıcından önce süre, gereklilikler (ürün, detay bilgileri), ön görülen opsiyonlar gibi konuları göz önüne alarak bir proje takvimi hazırlayarak bu takvim üzerinden hareket etmekteyim. İstenilirse projeye bağlı imalat – üretim çizimleri de hazırlamaktayım.
+            </p>
           </p>
         </section>
 
