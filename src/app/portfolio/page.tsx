@@ -40,7 +40,7 @@ export default function PortfolioPage() {
       
       {/* Üst Bant: Müşteri Portföyü Başlığı */}
       <div className="w-full py-10 mb-12 bg-secondary/50 border-y border-border/50">
-        <h1 className="text-5xl font-extrabold text-center text-primary tracking-tight">
+        <h1 className="text-5xl font-extralight text-center text-primary tracking-tight">
           Müşteri Portföyü
         </h1>
       </div>
