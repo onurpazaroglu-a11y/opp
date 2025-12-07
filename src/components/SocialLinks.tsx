@@ -11,7 +11,7 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   { src: "/logo-instagram.svg", href: "https://www.instagram.com/onurpazarogludesign/", label: "Instagram Logo", name: "Instagram" },
-  { src: "/logo-youtube.svg", href: "#", label: "YouTube Logo", name: "YouTube" },
+  { src: "/logo-youtube.svg", href: "https://www.youtube.com/@OnurPazaroglu", label: "YouTube Logo", name: "YouTube" },
   { src: "/logo-linkedin.svg", href: "https://www.linkedin.com/in/onurpazaroglu/", label: "LinkedIn Logo", name: "LinkedIn" },
   { src: "/logo-mail.svg", href: "mailto:onur@example.com", label: "Email Logo", name: "E-posta" },
 ];
