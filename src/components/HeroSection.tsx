@@ -3,26 +3,36 @@
 import { Button } from "@/components/ui/button";
 import { SocialLinks } from "./SocialLinks";
 import Link from "next/link";
+import { useIsMounted } from "@/hooks/use-is-mounted";
 
 export function HeroSection() {
+  const isMounted = useIsMounted();
+
+  // Helper component for video rendering
+  const VideoBackground = ({ src, className }: { src: string, className: string }) => (
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className={className}
+      src={src} 
+    >
+      Your browser does not support the video tag.
+    </video>
+  );
+
   return (
     <section className="relative min-h-[80vh] flex flex-col justify-start overflow-hidden bg-background">
       {/* Background Video Container (Moved to the very back) */}
       <div className="absolute inset-0 z-0">
-        {/* 
-          Kullanıcının video dosyasını public/archviz-video.mp4 yoluna eklemesi gerekmektedir.
-          Video, düşük opasite (opacity-10) ile şeffaf görünecek ve sürekli tekrarlayacaktır.
-        */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-10 transition-opacity duration-500"
-          src="/archviz-video.mp4" 
-        >
-          Your browser does not support the video tag.
-        </video>
+        {/* Render video only after mounting to avoid hydration issues related to autoPlay/browser environment */}
+        {isMounted && (
+          <VideoBackground
+            src="/archviz-video.mp4"
+            className="w-full h-full object-cover opacity-10 transition-opacity duration-500"
+          />
+        )}
         {/* Metin okunabilirliğini artırmak için hafif bir overlay */}
         <div className="absolute inset-0 bg-background/50 mix-blend-multiply"></div>
       </div>
@@ -56,16 +66,12 @@ export function HeroSection() {
       {/* 2. Full-Width Video Band - Yüksekliği h-64'ten h-[400px]'e çıkarıldı */}
       <div className="w-full mb-16">
         <div className="w-full h-[400px] overflow-hidden shadow-2xl">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            src="/home_bg.mp4" 
-          >
-            Your browser does not support the video tag.
-          </video>
+          {isMounted && (
+            <VideoBackground
+              src="/home_bg.mp4"
+              className="w-full h-full object-cover"
+            />
+          )}
         </div>
       </div>
 
