@@ -14,8 +14,8 @@ const experience = [
   {
     title: "Ürün Tasarımcısı ve İç Mimar", // Başlık güncellendi
     company: "Çeşitli Firmalar",
-    duration: "2012 - Günümüz",
-    description: "Projelerin başlangıcından teslimine kadar süre, gereklilikler ve opsiyonları göz önüne alarak proje takvimi hazırlama ve görselleştirme hizmeti sağlama. İstenilirse projeye bağlı imalat – üretim çizimleri hazırlama.",
+    duration: "2006 - Günümüz", // Güncellendi
+    description: "Rölöve, konsept tasarımı, ön çalışma / eskiz, imalat ve uygulama çizimleri, maliyet, şantiye kontrol, danışmanlık konularda istenirse herhangi birinde istenirse anahtar teslim olarak baştan sona proje hizmeti vermekteyim.", // Güncellendi
     icon: Briefcase,
   },
 ];
