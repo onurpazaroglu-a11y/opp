@@ -237,4 +237,5 @@ export const clientList: string[] = [
 export const partnerList: PartnerItem[] = [
   { name: "become design", href: "https://www.become.design.com" },
   { name: "Backtobasics", href: "https://backtobasics.ist/" },
+  { name: "BENS Yapı", href: "#" }, // Yeni eklenen çözüm ortağı
 ];
