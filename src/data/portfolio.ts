@@ -1,3 +1,5 @@
+import { interiorItemsData } from "./interior-data";
+
 export type PortfolioCategory = "Exterior" | "Interior" | "Animation" | "Client Portfolio";
 
 export interface PortfolioItem {
@@ -16,18 +18,8 @@ export interface CategoryItem {
 
 export interface PartnerItem {
   name: string;
-  href: string;
+  href?: string; // Link artık isteğe bağlı
 }
-
-// Interior öğelerini dinamik olarak oluşturma (1'den 20'ye kadar)
-const interiorItems: PortfolioItem[] = Array.from({ length: 20 }, (_, i) => ({
-  id: 13 + i, // ID'ler çakışmayacak şekilde ayarlandı
-  title: `İç Mekan Projesi ${i + 1}`,
-  category: "Interior",
-  imageUrl: `/interior/interior-${i + 1}.jpg`,
-  description: `Eklenen iç mekan görseli ${i + 1}.`,
-}));
-
 
 export const portfolioItems: PortfolioItem[] = [
   // Dış Mekan Öğeleri (Exterior) - 16 adet
@@ -144,8 +136,8 @@ export const portfolioItems: PortfolioItem[] = [
     description: "Kentsel Dönüşüm Projesi Kadıköy / İstanbul.",
   },
   
-  // İç Mekan Öğeleri (Interior) - 20 adet
-  ...interiorItems,
+  // İç Mekan Öğeleri (Interior) - Artık interior-data.ts'den geliyor
+  ...interiorItemsData,
 
   // Animasyon Öğeleri
   {
@@ -237,5 +229,5 @@ export const clientList: string[] = [
 export const partnerList: PartnerItem[] = [
   { name: "become design", href: "https://www.become.design.com" },
   { name: "Backtobasics", href: "https://backtobasics.ist/" },
-  { name: "BENS Yapı", href: "#" }, // Yeni eklenen çözüm ortağı
+  { name: "BENS Yapı" }, // Link kaldırıldı
 ];
